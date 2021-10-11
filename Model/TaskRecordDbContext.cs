@@ -6,12 +6,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace api_producer.Model
 {
-    public class UserTaskContext : DbContext
+    public class TaskRecordDbContext : DbContext
     {
-        public UserTaskContext(DbContextOptions options) : base(options)
+        public TaskRecordDbContext(DbContextOptions options) : base(options)
         {
         }
 
-        public DbSet<Task> UserTask { get; set; }
+        public DbSet<TaskRecord> UserTask { get; set; }
     }
 }

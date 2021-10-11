@@ -30,7 +30,7 @@ namespace api_producer
 
             services.AddControllers();
             services.AddEntityFrameworkInMemoryDatabase()
-               .AddDbContext<UserTaskContext>(option => option.UseInMemoryDatabase("UserTask"));
+               .AddDbContext<TaskRecordDbContext>(option => option.UseInMemoryDatabase("TaskRecord"));
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "api_producer", Version = "v1" });

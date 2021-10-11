@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace api_producer.Dto
 {
-    public class UserTask
+    public class UserTaskDto
     {
         public string email { get; set; }
         public string password { get; set; }
