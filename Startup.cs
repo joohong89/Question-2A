@@ -43,7 +43,10 @@ namespace api_producer
          
             app.UseDeveloperExceptionPage();
             app.UseSwagger();
-            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "api_producer v1"));
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "api_producer v1");
+                c.SwaggerEndpoint("/v1/tasks/task/swagger/v1/swagger.json", "api_producer v1");
+            });
          
 
             app.UseRouting();
