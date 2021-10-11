@@ -14,7 +14,7 @@ using System.Text;
 
 namespace api_producer.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("/task")]
     [ApiController]
     public class TasksController : ControllerBase
     {
@@ -104,9 +104,11 @@ namespace api_producer.Controllers
 
             // publish to queue
 
-            var factory = new ConnectionFactory() { 
-                HostName = "localhost", 
-                Port= 31672
+            var factory = new ConnectionFactory() {
+                HostName = Environment.GetEnvironmentVariable("RABBITMQ_HOST"),
+                Port = Convert.ToInt32(Environment.GetEnvironmentVariable("RABBITMQ_PORT"))
+                // HostName = "localhost", 
+                // Port= 31672
             };
             using (var connection = factory.CreateConnection())
             using (var channel = connection.CreateModel())
